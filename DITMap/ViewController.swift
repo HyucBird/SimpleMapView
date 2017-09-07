@@ -78,6 +78,7 @@ class ViewController: UIViewController,MKMapViewDelegate {
             return annotationView
         }  }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
         let viewAnno = view.annotation
         let viewTitle: String = ((viewAnno?.title)!)!
         let viewSubTitle: String =
@@ -85,7 +86,7 @@ class ViewController: UIViewController,MKMapViewDelegate {
         
         print("\(viewTitle) \(viewSubTitle)")
         
-        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .alert)
+        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "o", style: .default, handler: nil))
         present(ac, animated: true, completion: nil)
     }
